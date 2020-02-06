@@ -11,10 +11,14 @@ public class UsersPresenter implements UsersContract.Presenter {
     UsersContract.Repository repository;
 
     @Inject
-    public UsersPresenter(UsersContract.View view, UsersContract.Repository repository) {
-        this.view = view;
+    public UsersPresenter(UsersContract.Repository repository) {
         this.repository = repository;
         repository.setPresenter(this);
+    }
+
+    @Override
+    public void onViewAttached(UsersContract.View view) {
+        this.view = view;
     }
 
     @Override

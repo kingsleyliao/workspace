@@ -40,6 +40,7 @@ public class UsersFragment extends DaggerFragment implements UsersContract.View 
     @Override
     public void onStart() {
         super.onStart();
+        presenter.onViewAttached(this);
         presenter.fetchUsers();
     }
 

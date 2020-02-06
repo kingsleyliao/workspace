@@ -10,6 +10,7 @@ public interface UsersContract {
     }
 
     interface Presenter {
+        void onViewAttached(UsersContract.View view);
         void fetchUsers();
         void onUsersReceived(List<User> users);
     }
