@@ -7,14 +7,18 @@ import java.util.List;
 import javax.inject.Inject;
 
 public class PostsPresenter implements PostsContract.Presenter {
-    PostsContract.View view;
-    PostsContract.Repository repository;
+    private PostsContract.View view;
+    private PostsContract.Repository repository;
 
     @Inject
-    public PostsPresenter(PostsContract.View view, PostsContract.Repository repository) {
-        this.view = view;
+    public PostsPresenter(PostsContract.Repository repository) {
         this.repository = repository;
         repository.setPresenter(this);
+    }
+
+    @Override
+    public void onViewAttached(PostsContract.View view) {
+        this.view = view;
     }
 
     @Override

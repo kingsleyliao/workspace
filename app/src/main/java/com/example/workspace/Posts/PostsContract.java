@@ -10,6 +10,7 @@ public interface PostsContract {
     }
 
     interface Presenter {
+        void onViewAttached(View view);
         void fetchPosts();
         void onPostsReceived(List<Post> posts);
     }

@@ -12,16 +12,15 @@ import io.reactivex.schedulers.Schedulers;
 
 public class PostsRepository implements PostsContract.Repository {
     private static final String TAG = "PostsRepository";
-    PostsContract.Presenter presenter;
+    private PostsContract.Presenter presenter;
 
-    CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     @Inject
     ApiService apiService;
 
     @Inject
-    public PostsRepository() {
-    }
+    public PostsRepository() {}
 
     @Override
     public void fetchPosts() {
