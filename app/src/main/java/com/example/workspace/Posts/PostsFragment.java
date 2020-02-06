@@ -29,9 +29,9 @@ public class PostsFragment extends DaggerFragment implements PostsContract.View 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.posts_fragment, container, false);
-        linearLayout = layout.findViewById(R.id.post_container);
-        return layout;
+        View view = inflater.inflate(R.layout.posts_fragment, container, false);
+        linearLayout = view.findViewById(R.id.post_container);
+        return view;
     }
 
 
@@ -44,7 +44,6 @@ public class PostsFragment extends DaggerFragment implements PostsContract.View 
     @Override
     public void renderPosts(List<Post> posts) {
         for (Post post : posts) {
-            Log.d(TAG, post.toString());
             TextView title = new TextView(getContext());
             title.setText(post.getTitle());
             linearLayout.addView(title);
