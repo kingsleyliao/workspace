@@ -33,18 +33,12 @@ public class PostsFragment extends DaggerFragment implements PostsContract.View 
         linearLayout = layout.findViewById(R.id.post_container);
         return layout;
     }
-
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        presenter.fetchPosts();
-    }
-
+    
     @Override
     public void onStart() {
         super.onStart();
         presenter.onViewAttached(this);
+        presenter.fetchPosts();
     }
 
     @Override
