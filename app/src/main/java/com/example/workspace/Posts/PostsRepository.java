@@ -1,7 +1,10 @@
 package com.example.workspace.Posts;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.example.workspace.di.qualifiers.AppContext;
 import com.example.workspace.network.ApiService;
 
 import javax.inject.Inject;
@@ -20,7 +23,7 @@ public class PostsRepository implements PostsContract.Repository {
     ApiService apiService;
 
     @Inject
-    public PostsRepository() {}
+    public PostsRepository() { }
 
     @Override
     public void fetchPosts() {

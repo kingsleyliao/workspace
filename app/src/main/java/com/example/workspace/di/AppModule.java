@@ -1,9 +1,15 @@
 package com.example.workspace.di;
 
+import android.app.Application;
+import android.content.Context;
+
+import com.example.workspace.MainApplication;
+import com.example.workspace.di.qualifiers.AppContext;
 import com.example.workspace.network.ApiService;
 
 import javax.inject.Singleton;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;
