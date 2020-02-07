@@ -6,17 +6,17 @@ import dagger.Binds;
 import dagger.Module;
 
 @Module
-public abstract class PostsFragmentModule {
+public interface PostsFragmentModule {
     @FragmentScope
     @Binds
-    abstract PostsContract.View provideView(PostsFragment view);
+    PostsContract.View provideView(PostsFragment view);
 
     @FragmentScope
     @Binds
-    abstract PostsContract.Presenter providePresenter(PostsPresenter presenter);
+    PostsContract.Presenter providePresenter(PostsPresenter presenter);
 
     @FragmentScope
     @Binds
-    abstract PostsContract.Repository provideRepository(PostsRepository repository);
+    PostsContract.Repository provideRepository(PostsRepository repository);
 
 }
