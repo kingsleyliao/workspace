@@ -28,6 +28,7 @@ public class UsersRepository implements UsersContract.Repository {
 
     @Override
     public void fetchUsers() {
+        Log.d(TAG, apiService.toString());
         compositeDisposable.add(
                 apiService.fetchUsers()
                         .subscribeOn(Schedulers.io())
