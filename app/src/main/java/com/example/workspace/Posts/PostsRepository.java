@@ -33,7 +33,7 @@ public class PostsRepository implements PostsContract.Repository {
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
                                 posts -> presenter.onPostsReceived(posts),
-                                error -> Log.d(TAG, "fetchPosts: failed")
+                                error -> Log.d(TAG, "fetchPosts: failed" + error.toString())
                         )
         );
     }
