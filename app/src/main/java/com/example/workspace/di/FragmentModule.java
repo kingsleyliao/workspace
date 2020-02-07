@@ -10,7 +10,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 @Module
-public abstract class FragmentModule {
+abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector(modules = {PostsFragmentModule.class})
     abstract PostsFragment providesPostFragment();
