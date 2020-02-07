@@ -15,12 +15,13 @@ public class MainActivity extends DaggerAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, PostsFragment.newInstance())
-                .commit();
+        if (savedInstanceState == null) {
 
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, PostsFragment.newInstance())
+                    .commit();
+        }
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(v ->
