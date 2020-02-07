@@ -27,7 +27,7 @@ public class PostsRepository implements PostsContract.Repository {
 
     @Override
     public void fetchPosts() {
-        Log.d(TAG, apiService.toString());
+        Log.d("DAGGER", apiService.toString());
         compositeDisposable.add(
                 apiService.fetchPosts()
                         .subscribeOn(Schedulers.io())

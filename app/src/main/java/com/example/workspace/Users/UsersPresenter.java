@@ -1,10 +1,15 @@
 package com.example.workspace.Users;
 
+import android.util.Log;
+
 import com.example.workspace.models.User;
+import com.example.workspace.tracking.Tracker;
 
 import java.util.List;
 
 import javax.inject.Inject;
+
+import static android.content.ContentValues.TAG;
 
 public class UsersPresenter implements UsersContract.Presenter {
     UsersContract.View view;

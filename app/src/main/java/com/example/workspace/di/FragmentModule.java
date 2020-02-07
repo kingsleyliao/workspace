@@ -15,6 +15,7 @@ abstract class FragmentModule {
     @ContributesAndroidInjector(modules = {PostsFragmentModule.class})
     abstract PostsFragment providesPostFragment();
 
+    @FragmentScope
     @ContributesAndroidInjector(modules = {UsersFragmentModule.class})
     abstract UsersFragment providesUsersFragment();
 }

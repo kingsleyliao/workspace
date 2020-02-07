@@ -30,6 +30,4 @@ public class PostsPresenter implements PostsContract.Presenter {
     public void onPostsReceived(List<Post> posts) {
         view.renderPosts(posts);
     }
-
-
 }
